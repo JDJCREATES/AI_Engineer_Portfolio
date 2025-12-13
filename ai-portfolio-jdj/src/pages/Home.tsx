@@ -5,10 +5,10 @@ import FlipCard from '../components/FlipCard';
 const Home = () => {
     const projects = [
         {
-            title: "AI Project 1",
+            title: "Obj Mark",
             image: "https://via.placeholder.com/600x400/708090/FFFDD0?text=Project+1",
             description: "A cutting-edge AI solution that leverages machine learning to solve complex problems. This project demonstrates advanced techniques in natural language processing and computer vision.",
-            technologies: ["Python", "TensorFlow", "React", "MongoDB"],
+            technologies: ["React Native", "Vertex AI", "Google ML-Kit", "Expo", "Google Cloud"],
             link: "#"
         },
         {
@@ -30,6 +30,13 @@ const Home = () => {
             image: "https://via.placeholder.com/600x400/778899/FFFDD0?text=Project+4",
             description: "AI-powered automation system that streamlines workflows and enhances productivity. Combines multiple ML models for comprehensive solutions.",
             technologies: ["Keras", "Node.js", "GraphQL", "Redis"],
+            link: "#"
+        },
+        {
+            title: "Resume-AI",
+            image: "https://via.placeholder.com/600x400/708090/FFFDD0?text=Resume-AI",
+            description: "An AI-driven resume builder that helps users create professional resumes effortlessly. Utilizes NLP to optimize content and format for job applications.",
+            technologies: ["React", "TensorFlow.js", "Express", "MongoDB", "Digital Ocean"],
             link: "#"
         }
     ];

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect, useRef } from "react";
 import '../styles/FlipCard.css';
 
 interface FlipCardProps {
@@ -10,8 +10,39 @@ interface FlipCardProps {
 }
 
 const FlipCard = ({ title, image, description, technologies, link }: FlipCardProps) => {
+  const [isFlipped, setIsFlipped] = useState(false);
+  const [isHovering, setIsHovering] = useState(false);
+  const timeoutRef = useRef<NodeJS.Timeout | null>(null);
+
+  const handleMouseEnter = () => {
+    setIsHovering(true);
+    if (timeoutRef.current) {
+      clearTimeout(timeoutRef.current);
+    }
+    setIsFlipped(true);
+  };
+
+  const handleMouseLeave = () => {
+    setIsHovering(false);
+    timeoutRef.current = setTimeout(() => {
+      setIsFlipped(false);
+    }, 2000);
+  };
+
+  useEffect(() => {
+    return () => {
+      if (timeoutRef.current) {
+        clearTimeout(timeoutRef.current);
+      }
+    };
+  }, []);
+
   return (
-    <div className="flip-card">
+    <div 
+      className={`flip-card ${isFlipped ? 'flipped' : ''}`}
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
+    >
         <div className="flip-card-inner">
             <div className="flip-card-front">
                 <img src={image} alt={title} className="project-image" />
