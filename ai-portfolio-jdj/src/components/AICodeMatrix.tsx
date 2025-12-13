@@ -10,7 +10,7 @@ const AICodeMatrix = () => {
     const ctx = canvas.getContext('2d');
     if (!ctx) return;
     
-    // Extensive AI agent code snippets and prompts
+
     const codeSnippets = [
       'agent.invoke({"messages": [HumanMessage(content=query)]}) ',
       'workflow.add_node("researcher", research_node) ',
@@ -111,7 +111,10 @@ const AICodeMatrix = () => {
         const y = rowSpacing * (i + 1);
         const speed = 0.2 + Math.random() * 1.2; // Varying speeds
         const fontSize = 12 + Math.random() * 8;
-        rows.push(createCodeRow(y, speed, fontSize));
+        const startX = canvas.width - (Math.random() * canvas.width * 0.8); // Start at random positions
+        const row = createCodeRow(y, speed, fontSize);
+        row.x = startX;
+        rows.push(row);
       }
     };
 

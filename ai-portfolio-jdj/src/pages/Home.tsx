@@ -60,8 +60,17 @@ const Home = () => {
 
             <section className="intro-section">
                 <div className="intro-content">
-                    <h1 className="name">Jacob Jones</h1>
-                    <p className="title">AI Engineer - Packaging Machine Operator</p>
+                    <div className="intro-text">
+                        <h1 className="name">Jacob Jones</h1>
+                        <p className="title">AI Engineer - Packaging Machine Operator</p>
+                    </div>
+                    <div className="avatar-frame">
+                        <img 
+                            src="https://via.placeholder.com/300x400/708090/FFFDD0?text=JJ" 
+                            alt="Jacob Jones"
+                            className="avatar-image"
+                        />
+                    </div>
                 </div>
             </section>
         </div>
