@@ -3,6 +3,9 @@
   min-height: 100vh;
   padding: calc(var(--spacing-unit) * 4);
   box-sizing: border-box;
+  background: transparent;
+  position: relative;
+  z-index: 1;
 }
 
 .projects-section {
