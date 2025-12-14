@@ -19,9 +19,9 @@ const Home = () => {
             link: "#"
         },
         {
-            title: "AI Project 3",
+            title: "PepsiCo Code Date Agent",
             image: "https://via.placeholder.com/600x400/708090/FFFDD0?text=Project+3",
-            description: "Machine learning pipeline for automated data analysis and insights generation. Implements state-of-the-art algorithms for pattern recognition.",
+            description: "Demo of a mildly agentic chain for analyzing packaging code dates live. The agent compares historical records, asseses code date, and determines what action to take for the least financial impact.",
             technologies: ["Scikit-learn", "Pandas", "Flask", "PostgreSQL"],
             link: "#"
         },
