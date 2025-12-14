@@ -172,10 +172,40 @@ const AICodeMatrix = () => {
           row.typewriterSpeed = 0.5 + Math.random() * 1.5;
         }
 
-        // Draw text
+        // Draw text with syntax highlighting
         ctx.font = `${row.fontSize}px "Courier New", monospace`;
+        
+        // Highlight function names with orange/secondary color
+        const functionPattern = /\b([a-z_][a-z0-9_]*)(\()/gi;
+        let lastIndex = 0;
+        let match;
+        
+        const tempText = row.displayText;
+        functionPattern.lastIndex = 0;
+        
+        while ((match = functionPattern.exec(tempText)) !== null) {
+          // Draw text before function
+          const beforeText = tempText.substring(lastIndex, match.index);
+          ctx.fillStyle = `rgba(255, 253, 208, ${row.opacity})`;
+          const beforeWidth = ctx.measureText(tempText.substring(0, match.index)).width;
+          ctx.fillText(beforeText, row.x + ctx.measureText(tempText.substring(0, lastIndex)).width, row.y);
+          
+          // Draw function name in orange (secondary color)
+          ctx.fillStyle = `rgba(255, 140, 0, ${row.opacity + 0.2})`;
+          ctx.fillText(match[1], row.x + beforeWidth, row.y);
+          
+          // Draw opening parenthesis
+          const funcWidth = ctx.measureText(match[1]).width;
+          ctx.fillStyle = `rgba(255, 253, 208, ${row.opacity})`;
+          ctx.fillText(match[2], row.x + beforeWidth + funcWidth, row.y);
+          
+          lastIndex = match.index + match[0].length;
+        }
+        
+        // Draw remaining text
+        const remainingText = tempText.substring(lastIndex);
         ctx.fillStyle = `rgba(255, 253, 208, ${row.opacity})`;
-        ctx.fillText(row.displayText, row.x, row.y);
+        ctx.fillText(remainingText, row.x + ctx.measureText(tempText.substring(0, lastIndex)).width, row.y);
       });
 
       // Subtle fade effect on edges

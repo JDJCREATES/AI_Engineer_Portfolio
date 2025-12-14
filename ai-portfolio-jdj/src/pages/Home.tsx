@@ -7,15 +7,15 @@ const Home = () => {
         {
             title: "Obj Mark",
             image: "https://via.placeholder.com/600x400/708090/FFFDD0?text=Project+1",
-            description: "A cutting-edge AI solution that leverages machine learning to solve complex problems. This project demonstrates advanced techniques in natural language processing and computer vision.",
+            description: "Annotate images for computer vision datasets using AI assistance offline. This mobile app leverages on-device machine learning to streamline the annotation process, making it faster and more efficient.",
             technologies: ["React Native", "Vertex AI", "Google ML-Kit", "Expo", "Google Cloud"],
             link: "#"
         },
         {
-            title: "AI Project 2",
+            title: "SortxPort",
             image: "https://via.placeholder.com/600x400/778899/FFFDD0?text=Project+2",
-            description: "An innovative application of deep learning for predictive analytics. Features real-time data processing and intelligent decision-making capabilities.",
-            technologies: ["PyTorch", "FastAPI", "Docker", "AWS"],
+            description: "Sort then export your vast image library with natural language queries in a controlled environment. Langchain LCEL-powered backend provides the ability to search, categorize, and organize images effortlessly.",
+            technologies: ["React Native", "Typescript", "Langchain", "LCEL", "AWS", "Google ML-Kit"],
             link: "#"
         },
         {
@@ -63,7 +63,7 @@ const Home = () => {
                     <div className="intro-text">
                         <div className="title-row">
                             <h1 className="name">Jacob Jones</h1>
-                            <p className="title">AI Engineer</p>
+                            <p className="title">Full-Stack AI Engineer</p>
                             <p className="title">Packaging Machine Operator #37</p>
                         </div>
                         <p className="bio">
@@ -72,7 +72,7 @@ const Home = () => {
                     </div>
                     <div className="avatar-frame">
                         <img 
-                            src="https://via.placeholder.com/300x400/708090/FFFDD0?text=JJ" 
+                            src="/src/assets/20251106_182031.jpg" 
                             alt="Jacob Jones"
                             className="avatar-image"
                         />
