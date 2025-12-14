@@ -86,7 +86,7 @@ const AICodeMatrix = () => {
 
     const createCodeRow = (y: number, speed: number, fontSize: number): CodeRow => {
       const snippet = codeSnippets[Math.floor(Math.random() * codeSnippets.length)];
-      const useTypewriter = Math.random() < 0.3; // 30% chance of typewriter effect
+      const useTypewriter = Math.random() < 0.1; // 10% chance of typewriter effect
       
       return {
         y,
@@ -104,7 +104,7 @@ const AICodeMatrix = () => {
 
     const initRows = () => {
       rows = [];
-      const rowCount = 15;
+      const rowCount = 8;
       const rowSpacing = canvas.height / (rowCount + 1);
       
       for (let i = 0; i < rowCount; i++) {
@@ -242,7 +242,8 @@ const AICodeMatrix = () => {
         width: '100%',
         height: '100%',
         zIndex: 0,
-        pointerEvents: 'none'
+        pointerEvents: 'none',
+        willChange: 'transform'
       }}
     />
   );

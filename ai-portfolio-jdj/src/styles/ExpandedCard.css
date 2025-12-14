@@ -1,0 +1,363 @@
+.expanded-card-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.85);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(4px);
+  opacity: 0;
+  animation: fadeIn 0.3s ease-out forwards;
+  overflow: auto;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+.expanded-card {
+  position: relative;
+  background: linear-gradient(135deg, var(--background-color) 0%, var(--secondary-color) 100%);
+  border-radius: var(--border-radius);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.8);
+  border: 2px solid rgba(255, 253, 208, 0.2);
+  overflow: hidden;
+  max-width: 95vw;
+  max-height: 90vh;
+}
+
+/* Vertical expansion phase */
+.expanded-card.vertical {
+  width: 350px;
+  height: 0;
+  animation: expandVertical 0.4s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+@keyframes expandVertical {
+  to {
+    height: 600px;
+  }
+}
+
+/* Horizontal expansion phase */
+.expanded-card.horizontal {
+  width: 350px;
+  height: 600px;
+  animation: expandHorizontal 0.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+@keyframes expandHorizontal {
+  to {
+    width: 1200px;
+  }
+}
+
+/* Position-based expansion origins */
+.expanded-card.vertical.position-left {
+  transform-origin: left center;
+}
+
+.expanded-card.vertical.position-right {
+  transform-origin: right center;
+}
+
+.expanded-card.vertical.position-center {
+  transform-origin: center center;
+}
+
+.expanded-card.horizontal.position-left {
+  transform-origin: left center;
+}
+
+.expanded-card.horizontal.position-right {
+  transform-origin: right center;
+}
+
+.expanded-card.horizontal.position-center {
+  transform-origin: center center;
+}
+
+.close-button {
+  position: absolute;
+  top: calc(var(--spacing-unit) * 2);
+  right: calc(var(--spacing-unit) * 2);
+  width: 40px;
+  height: 40px;
+  border: 2px solid var(--primary-color);
+  background: transparent;
+  color: var(--primary-color);
+  font-size: 1.5rem;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 10;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  outline: none;
+}
+
+.close-button:hover,
+.close-button:focus {
+  background: var(--primary-color);
+  color: #1a202c;
+  transform: scale(1.1);
+  outline: none;
+}
+
+.expanded-content {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+}
+
+.expanded-card.horizontal .expanded-content {
+  animation: fadeInContent 0.4s ease-out 0.3s forwards;
+}
+
+@keyframes fadeInContent {
+  to {
+    opacity: 1;
+  }
+}
+
+.demo-section {
+  flex: 1.2;
+  background: rgba(26, 26, 26, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: calc(var(--spacing-unit) * 3);
+  border-right: 2px solid rgba(255, 253, 208, 0.2);
+}
+
+.demo-video {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: var(--border-radius);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+}
+
+.demo-placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(112, 128, 144, 0.2);
+  border-radius: var(--border-radius);
+  border: 2px dashed var(--primary-color);
+}
+
+.demo-placeholder p {
+  color: var(--text-color);
+  font-size: 1.2rem;
+  opacity: 0.6;
+}
+
+.details-section {
+  flex: 1;
+  padding: calc(var(--spacing-unit) * 4);
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: calc(var(--spacing-unit) * 3);
+}
+
+.details-section::-webkit-scrollbar {
+  width: 8px;
+}
+
+.details-section::-webkit-scrollbar-track {
+  background: rgba(255, 253, 208, 0.05);
+  border-radius: 4px;
+}
+
+.details-section::-webkit-scrollbar-thumb {
+  background: rgba(255, 253, 208, 0.2);
+  border-radius: 4px;
+}
+
+.details-section::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 253, 208, 0.3);
+}
+
+.expanded-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--primary-color);
+  margin: 0;
+  line-height: 1.2;
+}
+
+.expanded-description {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: var(--text-color);
+  margin: 0;
+}
+
+.code-editor {
+  margin-top: calc(var(--spacing-unit) * 3);
+  background: rgba(26, 26, 26, 0.8);
+  border-radius: var(--border-radius);
+  border: 1px solid rgba(255, 253, 208, 0.2);
+  overflow: hidden;
+}
+
+.editor-header {
+  background: rgba(112, 128, 144, 0.3);
+  padding: calc(var(--spacing-unit) * 1.5);
+  display: flex;
+  align-items: center;
+  gap: calc(var(--spacing-unit) * 2);
+  border-bottom: 1px solid rgba(255, 253, 208, 0.1);
+}
+
+.editor-dots {
+  display: flex;
+  gap: calc(var(--spacing-unit) * 1);
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+}
+
+.dot.red {
+  background: #ff5f56;
+}
+
+.dot.yellow {
+  background: #ffbd2e;
+}
+
+.dot.green {
+  background: #27c93f;
+}
+
+.editor-title {
+  font-size: 0.9rem;
+  color: var(--text-color);
+  font-family: 'Courier New', monospace;
+}
+
+.editor-content {
+  padding: calc(var(--spacing-unit) * 2);
+  font-family: 'Courier New', monospace;
+  font-size: 0.95rem;
+  line-height: 1.8;
+}
+
+.editor-content pre {
+  margin: 0;
+}
+
+.editor-content code {
+  display: block;
+}
+
+.code-line {
+  display: block;
+}
+
+.code-bracket {
+  color: var(--primary-color);
+}
+
+.code-key {
+  color: #79c0ff;
+}
+
+.code-punctuation {
+  color: var(--text-color);
+}
+
+.code-value {
+  color: #a5d6ff;
+}
+
+.code-link {
+  color: #ffa657;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.code-link:hover {
+  color: var(--primary-color);
+  text-decoration: underline;
+}
+
+/* Responsive */
+@media (max-width: 1200px) {
+  @keyframes expandHorizontal {
+    to {
+      width: 95vw;
+    }
+  }
+
+  .expanded-title {
+    font-size: 2rem;
+  }
+
+  .expanded-description {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .expanded-card.vertical {
+    width: 90vw;
+  }
+
+  @keyframes expandVertical {
+    to {
+      height: 80vh;
+    }
+  }
+
+  @keyframes expandHorizontal {
+    to {
+      width: 90vw;
+    }
+  }
+
+  .expanded-card.horizontal {
+    height: 80vh;
+  }
+
+  .expanded-content {
+    flex-direction: column;
+  }
+
+  .demo-section {
+    flex: none;
+    height: 40%;
+    border-right: none;
+    border-bottom: 2px solid rgba(255, 253, 208, 0.1);
+  }
+
+  .details-section {
+    flex: none;
+    height: 60%;
+    padding: calc(var(--spacing-unit) * 3);
+  }
+
+  .expanded-title {
+    font-size: 1.8rem;
+  }
+
+  .project-links {
+    flex-direction: column;
+  }
+}
