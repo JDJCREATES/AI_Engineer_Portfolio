@@ -12,7 +12,7 @@ interface FlipCardProps {
 const FlipCard = ({ title, image, description, technologies, link }: FlipCardProps) => {
   const [isFlipped, setIsFlipped] = useState(false);
   const [isHovering, setIsHovering] = useState(false);
-  const timeoutRef = useRef<NodeJS.Timeout | null>(null);
+  const timeoutRef = useRef<number | null>(null);
 
   const handleMouseEnter = () => {
     setIsHovering(true);

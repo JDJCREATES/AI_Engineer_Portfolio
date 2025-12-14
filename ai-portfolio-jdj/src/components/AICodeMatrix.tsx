@@ -125,7 +125,17 @@ const AICodeMatrix = () => {
     };
     
     setCanvasSize();
-    window.addEventListener('resize', setCanvasSize);
+    
+    // Debounce resize to prevent excessive re-rendering
+    let resizeTimeout: number;
+    const handleResize = () => {
+      clearTimeout(resizeTimeout);
+      resizeTimeout = window.setTimeout(() => {
+        setCanvasSize();
+      }, 250);
+    };
+    
+    window.addEventListener('resize', handleResize);
 
     function animate() {
       if (!ctx || !canvas) return;
@@ -188,7 +198,7 @@ const AICodeMatrix = () => {
     animate();
 
     return () => {
-      window.removeEventListener('resize', setCanvasSize);
+      window.removeEventListener('resize', handleResize);
     };
   }, []);
 

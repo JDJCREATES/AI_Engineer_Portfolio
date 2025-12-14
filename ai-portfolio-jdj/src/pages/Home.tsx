@@ -62,7 +62,11 @@ const Home = () => {
                 <div className="intro-content">
                     <div className="intro-text">
                         <h1 className="name">Jacob Jones</h1>
-                        <p className="title">AI Engineer - Packaging Machine Operator</p>
+                        <p className="title">AI Engineer</p>
+                        <p className="title">Packaging Machine Operator #37</p>
+                        <p className="bio">
+                            So eager to build I regularly code on a mobile IDE during lunch breaks. With a strong foundation in AI and machine learning, I specialize in developing innovative solutions that leverage cutting-edge technologies. My passion lies in creating applications that not only solve complex problems but also enhance user experiences. When I'm not coding, I enjoy painting and teaching my kids.
+                        </p>
                     </div>
                     <div className="avatar-frame">
                         <img 
