@@ -235,11 +235,66 @@
   line-height: 1.2;
 }
 
+.description-section {
+  position: relative;
+  margin-bottom: calc(var(--spacing-unit) * 2);
+}
+
+.description-content {
+  position: relative;
+  overflow: hidden;
+  transition: max-height 0.4s ease;
+}
+
+.description-content.collapsed {
+  max-height: 80px;
+}
+
+.description-content.expanded {
+  max-height: 1000px;
+}
+
+.description-content.collapsed::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 60px;
+  background: linear-gradient(to bottom, transparent, rgba(210, 117, 30, 0.95));
+  pointer-events: none;
+}
+
 .expanded-description {
   font-size: 1.1rem;
   line-height: 1.7;
   color: var(--text-color);
   margin: 0;
+}
+
+.description-expand-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: calc(var(--spacing-unit) * 0.5);
+  background: rgba(26, 26, 26, 0.8);
+  border: 1px solid rgba(255, 253, 208, 0.3);
+  border-radius: calc(var(--border-radius) / 2);
+  padding: calc(var(--spacing-unit) * 1);
+  color: var(--primary-color);
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: 100%;
+  margin-top: 0;
+  outline: none !important;
+}
+
+.description-expand-btn:hover {
+  background: rgba(26, 26, 26, 1);
+  border-color: var(--primary-color);
+  transform: translateY(-2px);
 }
 
 .code-editor {
@@ -293,6 +348,7 @@
   font-family: 'Courier New', monospace;
   font-size: 0.95rem;
   line-height: 1.8;
+  overflow-x: auto;
 }
 
 .editor-content pre {
@@ -328,6 +384,9 @@
   text-decoration: none;
   transition: all 0.3s ease;
   cursor: pointer;
+  word-break: break-all;
+  display: inline-block;
+  max-width: 100%;
 }
 
 .code-link:hover {

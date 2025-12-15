@@ -23,6 +23,7 @@ const ExpandedCard = ({
   onClose 
 }: ExpandedCardProps) => {
   const [expandPhase, setExpandPhase] = useState<'vertical' | 'horizontal'>('vertical');
+  const [isDescriptionExpanded, setIsDescriptionExpanded] = useState(false);
 
   useEffect(() => {
     // After vertical expansion, trigger horizontal
@@ -69,7 +70,17 @@ const ExpandedCard = ({
           <div className="details-section">
             <h2 className="expanded-title">{title}</h2>
             
-            <p className="expanded-description">{description}</p>
+            <div className="description-section">
+              <div className={`description-content ${isDescriptionExpanded ? 'expanded' : 'collapsed'}`}>
+                <p className="expanded-description">{description}</p>
+              </div>
+              <button 
+                className="description-expand-btn"
+                onClick={() => setIsDescriptionExpanded(!isDescriptionExpanded)}
+              >
+                {isDescriptionExpanded ? '▲ Show Less' : '▼ Read More'}
+              </button>
+            </div>
 
             <div className="code-editor">
               <div className="editor-header">
