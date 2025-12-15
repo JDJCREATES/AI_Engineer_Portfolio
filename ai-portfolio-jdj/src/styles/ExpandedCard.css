@@ -6,9 +6,6 @@
   height: 100vh;
   background: rgba(0, 0, 0, 0.85);
   z-index: 9999;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   backdrop-filter: blur(4px);
   opacity: 0;
   animation: fadeIn 0.3s ease-out forwards;
@@ -22,7 +19,10 @@
 }
 
 .expanded-card {
-  position: relative;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   background: linear-gradient(135deg, var(--background-color) 0%, var(--secondary-color) 100%);
   border-radius: var(--border-radius);
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.8);
@@ -32,55 +32,92 @@
   max-height: 90vh;
 }
 
-/* Vertical expansion phase */
-.expanded-card.vertical {
-  width: 350px;
+/* LEFT - Start at left corner, expand right and down */
+.expanded-card.vertical.position-left {
+  width: 0;
   height: 0;
-  animation: expandVertical 0.4s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  transform: translate(calc(-50% - 600px), -50%);
+  animation: expandLeft 0.4s cubic-bezier(0.4, 0, 0.2, 1) forwards;
 }
 
-@keyframes expandVertical {
+.expanded-card.horizontal.position-left {
+  width: 350px;
+  height: 600px;
+  transform: translate(calc(-50% - 600px + 175px), -50%);
+  animation: expandLeftHorizontal 0.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+@keyframes expandLeft {
   to {
+    width: 350px;
+    height: 600px;
+    transform: translate(calc(-50% - 600px + 175px), -50%);
+  }
+}
+
+@keyframes expandLeftHorizontal {
+  to {
+    width: 1200px;
+    transform: translate(-50%, -50%);
+  }
+}
+
+/* CENTER - Start at center, expand outward */
+.expanded-card.vertical.position-center {
+  width: 0;
+  height: 0;
+  transform: translate(-50%, -50%);
+  animation: expandCenter 0.4s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+.expanded-card.horizontal.position-center {
+  width: 350px;
+  height: 600px;
+  transform: translate(-50%, -50%);
+  animation: expandCenterHorizontal 0.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+@keyframes expandCenter {
+  to {
+    width: 350px;
     height: 600px;
   }
 }
 
-/* Horizontal expansion phase */
-.expanded-card.horizontal {
-  width: 350px;
-  height: 600px;
-  animation: expandHorizontal 0.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
-}
-
-@keyframes expandHorizontal {
+@keyframes expandCenterHorizontal {
   to {
     width: 1200px;
   }
 }
 
-/* Position-based expansion origins */
-.expanded-card.vertical.position-left {
-  transform-origin: left center;
-}
-
+/* RIGHT - Start at right corner, expand left and down */
 .expanded-card.vertical.position-right {
-  transform-origin: right center;
-}
-
-.expanded-card.vertical.position-center {
-  transform-origin: center center;
-}
-
-.expanded-card.horizontal.position-left {
-  transform-origin: left center;
+  width: 0;
+  height: 0;
+  transform: translate(calc(-50% + 600px), -50%);
+  animation: expandRight 0.4s cubic-bezier(0.4, 0, 0.2, 1) forwards;
 }
 
 .expanded-card.horizontal.position-right {
-  transform-origin: right center;
+  width: 350px;
+  height: 600px;
+  transform: translate(calc(-50% + 600px - 175px), -50%);
+  animation: expandRightHorizontal 0.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
 }
 
-.expanded-card.horizontal.position-center {
-  transform-origin: center center;
+@keyframes expandRight {
+  to {
+    width: 350px;
+    height: 600px;
+    transform: translate(calc(-50% + 600px - 175px), -50%);
+  }
+}
+
+@keyframes expandRightHorizontal {
+  to {
+    width: 1200px;
+    transform: translate(-50%, -50%);
+  }
 }
 
 .close-button {
