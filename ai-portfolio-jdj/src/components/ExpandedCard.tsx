@@ -45,10 +45,20 @@ const ExpandedCard = ({
         <div className="expanded-content">
           <div className="demo-section">
             {demoVideo ? (
-              <video className="demo-video" autoPlay loop muted playsInline>
-                <source src={demoVideo} type="video/mp4" />
-                Your browser does not support video.
-              </video>
+              demoVideo.includes('youtube.com') || demoVideo.includes('youtu.be') ? (
+                <iframe 
+                  className="demo-video"
+                  src={demoVideo}
+                  allow="autoplay; encrypted-media"
+                  allowFullScreen
+                  style={{ border: 'none' }}
+                />
+              ) : (
+                <video className="demo-video" autoPlay loop muted playsInline>
+                  <source src={demoVideo} type="video/mp4" />
+                  Your browser does not support video.
+                </video>
+              )
             ) : (
               <div className="demo-placeholder">
                 <p>Demo coming soon</p>

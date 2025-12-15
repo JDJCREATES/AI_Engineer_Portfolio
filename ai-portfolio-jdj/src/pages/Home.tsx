@@ -28,9 +28,10 @@ const Home = () => {
         {
             title: "Chargur",
             image: "https://via.placeholder.com/600x400/778899/FFFDD0?text=Project+4",
-            description: "Built in 13 days for the world's largest hackathon, Chargur is one the first early prototypes for a UI-UX Agent. Think figma meets Copilot but for designing user interfaces with AI assistance. it was built using a custom agentic framework that I developed specifically for this project. The AI can control the app's stages to help the user progess through the design process. Built entirely within bolt.new's no-code platform.",
+            description: "Built in 13 days entirely within bolt.new for the world's largest hackathon, Chargur is one the first early prototypes for a UI-UX Agent. Think figma meets Copilot but for designing user interfaces with AI assistance. it was built using a custom agentic framework that I developed specifically for this project. The AI can control the app's stages to help the user progess through the design process.",
             technologies: ["Typescript", "React", "Open-AI", "bolt.new", "Supabase"],
-            link: "#"
+            link: "#",
+            demoVideo: "https://www.youtube.com/embed/QQ0hikui8vM?autoplay=1&mute=1&loop=1&playlist=QQ0hikui8vM"
         },
         {
             title: "Resume-AI",
@@ -61,6 +62,9 @@ const Home = () => {
                                 description={project.description}
                                 technologies={project.technologies}
                                 link={project.link}
+                                demoVideo={project.demoVideo}
+                                githubLink={project.githubLink}
+                                liveLink={project.liveLink}
                                 position={position}
                             />
                         );
