@@ -66,7 +66,6 @@ const FlipCard = ({ title, image, description, technologies, link, demoVideo, gi
               <div className="flip-card-back">
                   <div className="project-details">
                       <h3>{title}</h3>
-                      <p className="project-description">{description}</p>
                       <div className="technologies">
                           {technologies.map((tech, index) => (
                               <span key={index} className="tech-tag">{tech}</span>

@@ -74,10 +74,10 @@ const Home = () => {
                         <div className="title-row">
                             <h1 className="name">Jacob Jones</h1>
                             <p className="title">Full-Stack AI Engineer</p>
-                            <p className="title">Packaging Machine Operator #37</p>
+                            <p className="subtitle">Packaging Machine Operator #37</p>
                         </div>
                         <p className="bio">
-                            So eager to build that I regularly code on a mobile IDE during factory breaks. From React components to ReAct chains, I ship UIs and the agents behind them. With a strong foundation in AI and full-stack development, I focus on building practical, forward-looking systems that use modern tooling without unnecessary complexity. I care about software that solves real problems and feels good to use. When I am not coding, I enjoy painting and teaching my kids.
+                            So eager to build that I regularly code on a mobile IDE during factory breaks. From React components to ReAct chains, I ship UIs and the agents behind them. With a strong foundation in AI and full-stack development, I focus on building practical, forward-looking systems that use modern tooling. I care about software that solves real problems and feels good to use. When I am not coding, I enjoy painting and teaching my kids.
                         </p>
                     </div>
                     <div className="avatar-frame">

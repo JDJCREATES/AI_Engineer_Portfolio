@@ -33,7 +33,7 @@ const ExpandedCard = ({
   }, []);
 
   return (
-    <div className={`expanded-card-overlay ${expandPhase}`} onClick={onClose}>
+    <div className={`expanded-card-overlay ${expandPhase} position-${position}`} onClick={onClose}>
       <div 
         className={`expanded-card ${expandPhase} position-${position}`}
         onClick={(e) => e.stopPropagation()}

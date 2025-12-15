@@ -71,13 +71,14 @@
 
 .intro-content .bio {
   font-size: 0.95rem;
-  color: #1a1a1a;
+  color: #000000;
   line-height: 1.6;
   margin-top: 0;
   padding: calc(var(--spacing-unit) * 2.5);
   background: var(--primary-color);
   border-radius: var(--border-radius);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  font-weight: 500;
 }
 
 .avatar-frame {
