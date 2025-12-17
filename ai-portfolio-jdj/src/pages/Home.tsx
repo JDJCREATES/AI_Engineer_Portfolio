@@ -3,45 +3,7 @@ import '../styles/Home.css';
 import FlipCard from '../components/FlipCard';
 
 const Home = () => {
-    const projects = [
-        {
-            title: "ObjMark",
-            image: "/src/assets/obj-mark/Screenshot 2025-12-14 170312.png",
-            description: "Annotate images for computer vision datasets using AI assistance offline. This mobile app leverages on-device machine learning to streamline the annotation process, making it faster and more efficient.",
-            technologies: ["React Native", "Vertex AI", "Google ML-Kit", "Expo", "Google Cloud"],
-            link: "#"
-        },
-        {
-            title: "SortxPort",
-            image: "/src/assets/sortxport/Screenshot 2025-12-14 170355.png",
-            description: "Sort then export your vast image library with natural language queries in a controlled environment. Langchain LCEL-powered backend provides the ability to search, categorize, and organize images effortlessly.",
-            technologies: ["React Native", "Typescript", "Langchain", "LCEL", "AWS", "Google ML-Kit"],
-            link: "#"
-        },
-        {
-            title: "PepsiCo Code Date Agent",
-            image: "https://via.placeholder.com/600x400/708090/FFFDD0?text=Project+3",
-            description: "Demo of a mildly agentic chain for analyzing packaging code dates live. The agent compares historical records, asseses code date, and determines what action to take for the least financial impact.",
-            technologies: ["Langchain", "Blender", "Open-AI", "Typescript", "Vite", "React"],
-            link: "#"
-        },
-        {
-            title: "Chargur",
-            image: "https://via.placeholder.com/600x400/778899/FFFDD0?text=Project+4",
-            description: "Built in 13 days entirely within bolt.new for the world's largest hackathon, Chargur is one  of the first early prototypes for a UI-UX Agent. Think figma meets Copilot but for designing user interfaces with AI assistance. it was built using a custom agentic framework that I developed specifically for this project. The AI can control the app's stages to help the user progess through the design process.",
-            technologies: ["Typescript", "React", "Open-AI", "bolt.new", "Supabase"],
-            link: "#",
-            demoVideo: "https://www.youtube.com/embed/QQ0hikui8vM?autoplay=1&mute=1&loop=1&playlist=QQ0hikui8vM",
-            githubLink: "https://github.com/JDJCREATES/Chargur2"
-        },
-        {
-            title: "Resume-AI",
-            image: "/src/assets/resum-ai/Screenshot 2025-12-14 170601.png",
-            description: "An AI-driven resume builder that helps users create professional resumes effortlessly. Utilizes NLP to optimize content and format for job applications.",
-            technologies: ["React", "TensorFlow.js", "Express", "MongoDB", "Digital Ocean", "Open-AI"],
-            link: "#"
-        }
-    ];
+
 
     return (
         <div className="home-container">
