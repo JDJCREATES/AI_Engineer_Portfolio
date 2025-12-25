@@ -1,6 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import '../styles/ExpandedCard.css';
 
+interface TechnicalDetails {
+  problemStatement?: string;
+  issues?: string[];
+  whatILearned?: string;
+  differentNextTime?: string;
+}
+
 interface ExpandedCardProps {
   title: string;
   description: string;
@@ -9,6 +16,7 @@ interface ExpandedCardProps {
   githubLink?: string;
   liveLink?: string;
   position: 'left' | 'center' | 'right';
+  technicalDetails?: TechnicalDetails;
   onClose: () => void;
 }
 
@@ -20,6 +28,7 @@ const ExpandedCard = ({
   githubLink, 
   liveLink,
   position,
+  technicalDetails,
   onClose 
 }: ExpandedCardProps) => {
   const [expandPhase, setExpandPhase] = useState<'vertical' | 'horizontal'>('vertical');
@@ -53,6 +62,7 @@ const ExpandedCard = ({
                   allow="autoplay; encrypted-media"
                   allowFullScreen
                   style={{ border: 'none' }}
+                  title='demoVideoFrame'
                 />
               ) : (
                 <video className="demo-video" autoPlay loop muted playsInline>
@@ -73,6 +83,39 @@ const ExpandedCard = ({
             <div className="description-section">
               <div className={`description-content ${isDescriptionExpanded ? 'expanded' : 'collapsed'}`}>
                 <p className="expanded-description">{description}</p>
+                
+                {technicalDetails && (
+                  <div className="technical-details">
+                    {technicalDetails.problemStatement && (
+                      <div className="detail-item">
+                        <h4>Problem</h4>
+                        <p>{technicalDetails.problemStatement}</p>
+                      </div>
+                    )}
+                    {technicalDetails.issues && technicalDetails.issues.length > 0 && (
+                      <div className="detail-item">
+                        <h4>Challenges</h4>
+                        <ul>
+                          {technicalDetails.issues.map((issue, idx) => (
+                            <li key={idx}>{issue}</li>
+                          ))}
+                        </ul>
+                      </div>
+                    )}
+                    {technicalDetails.whatILearned && (
+                      <div className="detail-item">
+                        <h4>What I Learned</h4>
+                        <p>{technicalDetails.whatILearned}</p>
+                      </div>
+                    )}
+                    {technicalDetails.differentNextTime && (
+                      <div className="detail-item">
+                        <h4>Next Time</h4>
+                        <p>{technicalDetails.differentNextTime}</p>
+                      </div>
+                    )}
+                  </div>
+                )}
               </div>
               <button 
                 className="description-expand-btn"

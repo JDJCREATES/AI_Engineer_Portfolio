@@ -1,8 +1,10 @@
 import React from "react";
 import '../styles/Home.css';
 import FlipCard from '../components/FlipCard';
+import projectsData from '../data/projects-data.json';
 
 const Home = () => {
+    const projects = projectsData;
 
 
     return (
@@ -28,6 +30,7 @@ const Home = () => {
                                 demoVideo={project.demoVideo}
                                 githubLink={project.githubLink}
                                 liveLink={project.liveLink}
+                                technicalDetails={project.technicalDetails}
                                 position={position}
                             />
                         );

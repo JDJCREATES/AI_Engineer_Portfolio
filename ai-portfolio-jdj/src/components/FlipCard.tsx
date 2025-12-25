@@ -2,6 +2,13 @@ import React, { useState, useEffect, useRef } from "react";
 import '../styles/FlipCard.css';
 import ExpandedCard from './ExpandedCard';
 
+interface TechnicalDetails {
+  problemStatement?: string;
+  issues?: string[];
+  whatILearned?: string;
+  differentNextTime?: string;
+}
+
 interface FlipCardProps {
   title: string;
   image: string;
@@ -12,9 +19,10 @@ interface FlipCardProps {
   githubLink?: string;
   liveLink?: string;
   position?: 'left' | 'center' | 'right';
+  technicalDetails?: TechnicalDetails;
 }
 
-const FlipCard = ({ title, image, description, technologies, link, demoVideo, githubLink, liveLink, position = 'center' }: FlipCardProps) => {
+const FlipCard = ({ title, image, description, technologies, link, demoVideo, githubLink, liveLink, position = 'center', technicalDetails }: FlipCardProps) => {
   const [isFlipped, setIsFlipped] = useState(false);
   const [isHovering, setIsHovering] = useState(false);
   const [isExpanded, setIsExpanded] = useState(false);
@@ -63,7 +71,7 @@ const FlipCard = ({ title, image, description, technologies, link, demoVideo, gi
                       <h3>{title}</h3>
                   </div>
               </div>
-              <div className="flip-card-back">
+              <div className="flip-card-back" onClick={() => setIsExpanded(true)}>
                   <div className="project-details">
                       <h3>{title}</h3>
                       <div className="technologies">
@@ -94,6 +102,7 @@ const FlipCard = ({ title, image, description, technologies, link, demoVideo, gi
               githubLink={githubLink}
               liveLink={liveLink}
               position={position}
+              technicalDetails={technicalDetails}
               onClose={() => setIsExpanded(false)}
           />
       )}
