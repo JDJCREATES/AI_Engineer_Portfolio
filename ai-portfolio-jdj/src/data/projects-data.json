@@ -28,8 +28,8 @@
             "whatILearned": "",
             "differentNextTime": ""
         },
-        "description": "Sort then export your vast image library with natural language queries in a controlled environment. Langchain LCEL-powered backend provides the ability to search, categorize, and organize images effortlessly.",
-        "technologies": ["React Native", "Typescript", "Langchain", "LCEL", "AWS", "Google ML-Kit"],
+        "description": "Sort then export your vast image library with natural language queries in a controlled environment. LangChain LCEL-powered backend provides the ability to search, categorize, and organize images effortlessly.",
+        "technologies": ["React Native", "Typescript", "LangChain", "LCEL", "AWS", "Google ML-Kit"],
         "link": "#",
         "liveLink": "",
         "githubLink": "",
@@ -51,8 +51,8 @@
             "whatILearned": "",
             "differentNextTime": ""
         },
-        "description": "Google Gemini 3 DeepMind Hackathon 2026 entry. AI-powered production line monitoring system leveraging computer vision and real-time analytics to detect anomalies and optimize manufacturing workflows.",
-        "technologies": ["Gemini 3", "React", "Typescript", "Computer Vision", "TensorFlow"],
+        "description": "Google Gemini 3 DeepMind Hackathon 2026 entry. AI-powered production line monitoring system leveraging real-time analytics and computer vision to detect anomalies, optimize workflows, and ensure quality control in manufacturing environments.",
+        "technologies": ["Gemini 3", "React", "Typescript", "Computer Vision", "LangGraph"],
         "link": "#",
         "liveLink": "",
         "githubLink": "",
@@ -74,7 +74,7 @@
             "differentNextTime": ""
         },
         "description": "Google Gemini 3 DeepMind Hackathon 2026 entry. Multi-agent orchestrator and sub-agent vibe coding platform with a built-in progressive learning system. Agents learn patterns and common error fixes over time, with opt-in system-wide improvements that benefit the entire platform.",
-        "technologies": ["Gemini 3", "Multi-Agent Systems", "Typescript", "React", "Machine Learning"],
+        "technologies": ["Gemini 3", "Multi-Agent Systems", "Typescript", "React", "LangGraph"],
         "link": "#",
         "liveLink": "",
         "githubLink": "",
