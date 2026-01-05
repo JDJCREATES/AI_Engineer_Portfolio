@@ -1,6 +1,7 @@
 import '../styles/Home.css';
 import ProjectCarousel from '../components/ProjectCarousel';
 import projectsData from '../data/projects-data.json';
+import { getImagePath } from '../utils/getImagePath';
 
 const Home = () => {
     const projects = projectsData;
@@ -44,7 +45,7 @@ const Home = () => {
                     <div className="intro-avatar">
                         <div className="avatar-frame">
                             <img 
-                                src="/src/assets/20251106_182031.jpg" 
+                                src={getImagePath("/assets/20251106_182031.jpg")} 
                                 alt="Jacob Jones"
                                 className="avatar-image"
                                 loading="lazy"

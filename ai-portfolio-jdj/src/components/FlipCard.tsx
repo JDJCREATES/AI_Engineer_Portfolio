@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 import '../styles/FlipCard.css';
 import ExpandedCard from './ExpandedCard';
+import { getImagePath } from '../utils/getImagePath';
 
 interface TechnicalDetails {
   problemStatement?: string;
@@ -102,6 +103,7 @@ const FlipCard = ({ title, status, image, images, description, technologies, dem
   }, []);
 
   const currentImage = images && images.length > 0 ? images[currentImageIndex] : image;
+  const imageSrc = getImagePath(currentImage);
 
   return (
     <>
@@ -118,7 +120,7 @@ const FlipCard = ({ title, status, image, images, description, technologies, dem
                       </div>
                   )}
                   <img 
-                      src={currentImage} 
+                      src={imageSrc} 
                       alt={title} 
                       className={`project-image ${isAnimating ? 'panning' : ''}`}
                       loading="lazy"

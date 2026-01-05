@@ -3,7 +3,7 @@
         "title": "ObjMark",
         "sectionType": "Personal",
         "status": "live-google-play",
-        "image": "/src/assets/obj-mark/Screenshot 2025-12-14 170312.png",
+        "image": "/assets/obj-mark/Screenshot 2025-12-14 170312.png",
         "technicalDetails": {
             "problemStatement": "Creating bounding box image datasets on the go was near impossible with existing tools. I needed an offline mobile annotation tool that was quick and straight-forward to use.",
             "issues": ["Google ML-Kit limitations: bounding boxes are only accurate with objects clearly in view ~ adjusting pre drawn boxes is still faster than drawing them all manually"],
@@ -21,7 +21,7 @@
         "title": "SortxPort",
         "sectionType": "Hackathons",
         "status": "completed-offline",
-        "image": "/src/assets/sortxport/Screenshot 2025-12-14 170355.png",
+        "image": "/assets/sortxport/Screenshot 2025-12-14 170355.png",
         "technicalDetails": {
             "problemStatement": "Thousands of family photos mixed wiht memes and screenshots made it nearly impossible to find specific images when needed. Existing solutions lacked natural language search capabilities and required manual sorting.",
             "issues": [],
@@ -39,11 +39,11 @@
         "title": "LineWatch-AI",
         "sectionType": "Hackathons",
         "status": "in-development",
-        "image": "/src/assets/linewatch-ai/Screenshot 2026-01-05 104917.png",
+        "image": "/assets/linewatch-ai/Screenshot 2026-01-05 104917.png",
         "images": [
-            "/src/assets/linewatch-ai/Screenshot 2026-01-05 104917.png",
-            "/src/assets/linewatch-ai/Screenshot 2026-01-05 105233.png",
-            "/src/assets/linewatch-ai/Screenshot 2026-01-05 105306.png"
+            "/assets/linewatch-ai/Screenshot 2026-01-05 104917.png",
+            "/assets/linewatch-ai/Screenshot 2026-01-05 105233.png",
+            "/assets/linewatch-ai/Screenshot 2026-01-05 105306.png"
         ],
         "technicalDetails": {
             "problemStatement": "",
@@ -62,10 +62,10 @@
         "title": "ShipS*",
         "sectionType": "Hackathons",
         "status": "in-development",
-        "image": "/src/assets/Ships/Screenshot 2025-12-26 165922.png",
+        "image": "/assets/Ships/Screenshot 2025-12-26 165922.png",
         "images": [
-            "/src/assets/Ships/Screenshot 2025-12-26 165922.png",
-            "/src/assets/Ships/Screenshot 2026-01-05 104735.png"
+            "/assets/Ships/Screenshot 2025-12-26 165922.png",
+            "/assets/Ships/Screenshot 2026-01-05 104735.png"
         ],
         "technicalDetails": {
             "problemStatement": "",
@@ -84,10 +84,10 @@
         "title": "Chargur",
         "sectionType": "Hackathons",
         "status": "completed-offline",
-        "image": "/src/assets/Chargur/Screenshot 2026-01-05 083557.png",
+        "image": "/assets/Chargur/Screenshot 2026-01-05 083557.png",
         "images": [
-            "/src/assets/Chargur/Screenshot 2026-01-05 083557.png",
-            "/src/assets/Chargur/Screenshot 2026-01-05 083821.png"
+            "/assets/Chargur/Screenshot 2026-01-05 083557.png",
+            "/assets/Chargur/Screenshot 2026-01-05 083821.png"
         ],
         "technicalDetails": {
             "problemStatement": "",
@@ -106,7 +106,7 @@
         "title": "Resume-AI",
         "sectionType": "Personal",
         "status": "live-web",
-        "image": "/src/assets/resum-ai/Screenshot 2025-12-14 170601.png",
+        "image": "/assets/resum-ai/Screenshot 2025-12-14 170601.png",
         "technicalDetails": {
             "problemStatement": "",
             "issues": [],
