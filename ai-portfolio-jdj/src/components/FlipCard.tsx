@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef } from "react";
 import '../styles/FlipCard.css';
 import ExpandedCard from './ExpandedCard';
 
@@ -16,7 +16,6 @@ interface FlipCardProps {
   images?: string[]; // Multiple images for auto-scrolling
   description: string;
   technologies: string[];
-  link?: string;
   demoVideo?: string;
   githubLink?: string;
   liveLink?: string;
@@ -24,9 +23,8 @@ interface FlipCardProps {
   technicalDetails?: TechnicalDetails;
 }
 
-const FlipCard = ({ title, status, image, images, description, technologies, link, demoVideo, githubLink, liveLink, position = 'center', technicalDetails }: FlipCardProps) => {
+const FlipCard = ({ title, status, image, images, description, technologies, demoVideo, githubLink, liveLink, position = 'center', technicalDetails }: FlipCardProps) => {
   const [isFlipped, setIsFlipped] = useState(false);
-  const [isHovering, setIsHovering] = useState(false);
   const [isExpanded, setIsExpanded] = useState(false);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [isAnimating, setIsAnimating] = useState(false);

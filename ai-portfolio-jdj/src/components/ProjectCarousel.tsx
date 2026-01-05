@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState, useMemo } from 'react';
 import FlipCard from './FlipCard';
 import '../styles/ProjectCarousel.css';
 
@@ -32,7 +32,7 @@ const ProjectCarousel: React.FC<ProjectCarouselProps> = ({ projects }) => {
   const [currentSectionIndex, setCurrentSectionIndex] = useState(0);
 
   // Group projects by section type
-  const sections = React.useMemo(() => {
+  const sections = useMemo(() => {
     const grouped: { [key: string]: Project[] } = {};
     projects.forEach(project => {
       const sectionType = project.sectionType || 'Other';
@@ -112,7 +112,6 @@ const ProjectCarousel: React.FC<ProjectCarouselProps> = ({ projects }) => {
                 images={project.images}
                 description={project.description}
                 technologies={project.technologies}
-                link={project.link}
                 demoVideo={project.demoVideo}
                 githubLink={project.githubLink}
                 liveLink={project.liveLink}
