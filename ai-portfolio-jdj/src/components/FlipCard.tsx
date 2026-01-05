@@ -12,6 +12,7 @@ interface TechnicalDetails {
 interface FlipCardProps {
   title: string;
   image: string;
+  images?: string[]; // Multiple images for auto-scrolling
   description: string;
   technologies: string[];
   link?: string;
@@ -22,11 +23,54 @@ interface FlipCardProps {
   technicalDetails?: TechnicalDetails;
 }
 
-const FlipCard = ({ title, image, description, technologies, link, demoVideo, githubLink, liveLink, position = 'center', technicalDetails }: FlipCardProps) => {
+const FlipCard = ({ title, image, images, description, technologies, link, demoVideo, githubLink, liveLink, position = 'center', technicalDetails }: FlipCardProps) => {
   const [isFlipped, setIsFlipped] = useState(false);
   const [isHovering, setIsHovering] = useState(false);
   const [isExpanded, setIsExpanded] = useState(false);
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const [isAnimating, setIsAnimating] = useState(false);
   const timeoutRef = useRef<number | null>(null);
+  const imageIntervalRef = useRef<number | null>(null);
+  const animationTimeoutRef = useRef<number | null>(null);
+
+  // Auto-scroll images if multiple images provided
+  useEffect(() => {
+    if (images && images.length > 1) {
+      const cycleImages = () => {
+        // Start pan animation
+        setIsAnimating(true);
+        
+        // After pan completes (5s), pause at right position for 2s, then switch to next image
+        animationTimeoutRef.current = setTimeout(() => {
+          // Pause before switching image (keep isAnimating true to stay at right position)
+          setTimeout(() => {
+            setIsAnimating(false);
+            setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
+            
+            // Small delay to reset position before next animation starts
+            setTimeout(() => {
+              setIsAnimating(true);
+            }, 50);
+          }, 2000);
+        }, 5000);
+      };
+
+      // Initial cycle
+      cycleImages();
+      
+      // Repeat every 7 seconds (5s animation + 2s pause)
+      imageIntervalRef.current = setInterval(cycleImages, 7000);
+
+      return () => {
+        if (imageIntervalRef.current) {
+          clearInterval(imageIntervalRef.current);
+        }
+        if (animationTimeoutRef.current) {
+          clearTimeout(animationTimeoutRef.current);
+        }
+      };
+    }
+  }, [images, currentImageIndex]);
 
   const handleMouseEnter = () => {
     setIsHovering(true);
@@ -48,8 +92,16 @@ const FlipCard = ({ title, image, description, technologies, link, demoVideo, gi
       if (timeoutRef.current) {
         clearTimeout(timeoutRef.current);
       }
+      if (imageIntervalRef.current) {
+        clearInterval(imageIntervalRef.current);
+      }
+      if (animationTimeoutRef.current) {
+        clearTimeout(animationTimeoutRef.current);
+      }
     };
   }, []);
+
+  const currentImage = images && images.length > 0 ? images[currentImageIndex] : image;
 
   return (
     <>
@@ -61,9 +113,9 @@ const FlipCard = ({ title, image, description, technologies, link, demoVideo, gi
           <div className="flip-card-inner">
               <div className="flip-card-front">
                   <img 
-                      src={image} 
+                      src={currentImage} 
                       alt={title} 
-                      className="project-image" 
+                      className={`project-image ${isAnimating ? 'panning' : ''}`}
                       loading="lazy"
                       decoding="async"
                   />

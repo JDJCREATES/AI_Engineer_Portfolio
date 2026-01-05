@@ -1,32 +1,41 @@
 [
     {
         "title": "ObjMark",
+        "sectionType": "Personal",
         "image": "/src/assets/obj-mark/Screenshot 2025-12-14 170312.png",
         "technicalDetails": {
             "problemStatement": "Creating bounding box image datasets on the go was near impossible with existing tools. I needed an offline mobile annotation tool that was quick and straight-forward to use.",
             "issues": ["Google ML-Kit limitations: bounding boxes are only accurate with objects clearly in view ~ adjusting pre drawn boxes is still faster than drawing them all manually"],
-            "whatILearned": "",
-            "differentNextTime": ""
+            "whatILearned": "ML-Kit has a robust set of on-device models that can be leveraged for offline AI applications. Integrating Google AI models with mobile apps can significantly enhance functionality while maintaining user privacy.",
+            "differentNextTime": "I would explore additional on-device models and possibly implement a feedback loop to improve annotation accuracy over time based on user corrections."
         },
         "description": "Annotate images for computer vision datasets using AI assistance offline. This mobile app leverages on-device machine learning to streamline the annotation process, making it faster and more efficient.",
         "technologies": ["React Native", "Vertex AI", "Google ML-Kit", "Expo", "Google Cloud"],
-        "link": "#"
+        "link": "#",
+        "liveLink": "https://play.google.com/store/apps/details?id=com.jdj.creates.ObjMarkApp",
+        "githubLink": "",
+        "demoVideo": ""
     },
     {
         "title": "SortxPort",
+        "sectionType": "Personal",
         "image": "/src/assets/sortxport/Screenshot 2025-12-14 170355.png",
         "technicalDetails": {
-            "problemStatement": "",
+            "problemStatement": "Thousands of family photos mixed wiht memes and screenshots made it nearly impossible to find specific images when needed. Existing solutions lacked natural language search capabilities and required manual sorting.",
             "issues": [],
             "whatILearned": "",
             "differentNextTime": ""
         },
         "description": "Sort then export your vast image library with natural language queries in a controlled environment. Langchain LCEL-powered backend provides the ability to search, categorize, and organize images effortlessly.",
         "technologies": ["React Native", "Typescript", "Langchain", "LCEL", "AWS", "Google ML-Kit"],
-        "link": "#"
+        "link": "#",
+        "liveLink": "",
+        "githubLink": "",
+        "demoVideo": ""
     },
     {
-        "title": "PepsiCo Code Date Agent",
+        "title": "Manufacturing Code Date Agent",
+        "sectionType": "Professional",
         "image": "https://via.placeholder.com/600x400/708090/FFFDD0?text=Project+3",
         "technicalDetails": {
             "problemStatement": "",
@@ -36,11 +45,19 @@
         },
         "description": "Demo of a mildly agentic chain for analyzing packaging code dates live. The agent compares historical records, asseses code date, and determines what action to take for the least financial impact.",
         "technologies": ["Langchain", "Blender", "Open-AI", "Typescript", "Vite", "React"],
-        "link": "#"
+        "link": "#",
+        "liveLink": "",
+        "githubLink": "",
+        "demoVideo": ""
     },
     {
         "title": "Chargur",
-        "image": "https://via.placeholder.com/600x400/778899/FFFDD0?text=Project+4",
+        "sectionType": "Hackathons",
+        "image": "/src/assets/Chargur/Screenshot 2026-01-05 083557.png",
+        "images": [
+            "/src/assets/Chargur/Screenshot 2026-01-05 083557.png",
+            "/src/assets/Chargur/Screenshot 2026-01-05 083821.png"
+        ],
         "technicalDetails": {
             "problemStatement": "",
             "issues": [],
@@ -51,10 +68,12 @@
         "technologies": ["Typescript", "React", "Open-AI", "bolt.new", "Supabase"],
         "link": "#",
         "demoVideo": "https://www.youtube.com/embed/QQ0hikui8vM?autoplay=1&mute=1&loop=1&playlist=QQ0hikui8vM",
-        "githubLink": "https://github.com/JDJCREATES/Chargur2"
+        "githubLink": "https://github.com/JDJCREATES/Chargur2",
+        "liveLink": ""
     },
     {
         "title": "Resume-AI",
+        "sectionType": "Personal",
         "image": "/src/assets/resum-ai/Screenshot 2025-12-14 170601.png",
         "technicalDetails": {
             "problemStatement": "",
@@ -64,6 +83,9 @@
         },
         "description": "An AI-driven resume builder that helps users create professional resumes effortlessly. Utilizes NLP to optimize content and format for job applications.",
         "technologies": ["React", "TensorFlow.js", "Express", "MongoDB", "Digital Ocean", "Open-AI"],
-        "link": "#"
+        "link": "#",
+        "liveLink": "",
+        "githubLink": "",
+        "demoVideo": ""
     }
 ]
