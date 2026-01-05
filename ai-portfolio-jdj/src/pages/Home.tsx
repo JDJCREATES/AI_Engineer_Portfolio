@@ -1,4 +1,3 @@
-import React from "react";
 import '../styles/Home.css';
 import ProjectCarousel from '../components/ProjectCarousel';
 import projectsData from '../data/projects-data.json';

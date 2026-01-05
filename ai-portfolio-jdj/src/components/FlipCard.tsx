@@ -25,6 +25,7 @@ interface FlipCardProps {
 
 const FlipCard = ({ title, status, image, images, description, technologies, demoVideo, githubLink, liveLink, position = 'center', technicalDetails }: FlipCardProps) => {
   const [isFlipped, setIsFlipped] = useState(false);
+  const [, setIsHovering] = useState(false);
   const [isExpanded, setIsExpanded] = useState(false);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [isAnimating, setIsAnimating] = useState(false);

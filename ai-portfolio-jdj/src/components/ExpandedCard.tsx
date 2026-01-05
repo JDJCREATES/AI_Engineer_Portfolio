@@ -23,7 +23,7 @@ interface ExpandedCardProps {
 const ExpandedCard = ({ 
   title, 
   description, 
-  technologies, 
+  technologies: _technologies, 
   demoVideo, 
   githubLink, 
   liveLink,
