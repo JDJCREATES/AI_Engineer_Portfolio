@@ -18,7 +18,7 @@
     },
     {
         "title": "SortxPort",
-        "sectionType": "Personal",
+        "sectionType": "Hackathons",
         "image": "/src/assets/sortxport/Screenshot 2025-12-14 170355.png",
         "technicalDetails": {
             "problemStatement": "Thousands of family photos mixed wiht memes and screenshots made it nearly impossible to find specific images when needed. Existing solutions lacked natural language search capabilities and required manual sorting.",

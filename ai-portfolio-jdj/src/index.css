@@ -39,6 +39,10 @@ body {
   min-height: 100vh;
   overflow-x: hidden;
   background-color: #1a1a1a;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 h1 {
