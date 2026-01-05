@@ -1,4 +1,4 @@
-import { useState, useMemo } from 'react';
+import { useState, useMemo, useRef, useEffect } from 'react';
 import FlipCard from './FlipCard';
 import '../styles/ProjectCarousel.css';
 
@@ -30,6 +30,7 @@ interface ProjectCarouselProps {
 
 const ProjectCarousel: React.FC<ProjectCarouselProps> = ({ projects }) => {
   const [currentSectionIndex, setCurrentSectionIndex] = useState(0);
+  const containerRef = useRef<HTMLDivElement>(null);
 
   // Group projects by section type
   const sections = useMemo(() => {
@@ -54,18 +55,26 @@ const ProjectCarousel: React.FC<ProjectCarouselProps> = ({ projects }) => {
     setCurrentSectionIndex((prev) => (prev < sections.length - 1 ? prev + 1 : 0));
   };
 
-  // Handle mouse wheel scrolling
-  const handleWheel = (e: React.WheelEvent) => {
-    e.preventDefault();
-    if (e.deltaY > 0) {
-      handleNext();
-    } else {
-      handlePrevious();
-    }
-  };
+  // Handle mouse wheel scrolling with useEffect for non-passive listener
+  useEffect(() => {
+    const container = containerRef.current;
+    if (!container) return;
+
+    const handleWheel = (e: WheelEvent) => {
+      e.preventDefault();
+      if (e.deltaY > 0) {
+        setCurrentSectionIndex((prev) => (prev < sections.length - 1 ? prev + 1 : 0));
+      } else {
+        setCurrentSectionIndex((prev) => (prev > 0 ? prev - 1 : sections.length - 1));
+      }
+    };
+
+    container.addEventListener('wheel', handleWheel, { passive: false });
+    return () => container.removeEventListener('wheel', handleWheel);
+  }, [sections.length]);
 
   return (
-    <div className="carousel-container" onWheel={handleWheel}>
+    <div className="carousel-container" ref={containerRef}>
       <div className="carousel-header" onClick={handlePrevious}>
         <button
           className="carousel-nav-arrow carousel-nav-left"

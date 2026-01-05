@@ -48,40 +48,52 @@
 
 @media (max-width: 768px) {
   .flip-card {
-    height: 400px;
+    height: 280px;
+  }
+
+  .status-pill {
+    padding: calc(var(--spacing-unit) * 0.5) calc(var(--spacing-unit) * 1);
+    font-size: 0.55rem;
+    top: calc(var(--spacing-unit) * 1);
+    right: calc(var(--spacing-unit) * 1);
   }
 }
 
 @media (max-width: 480px) {
   .flip-card {
-    height: 380px;
+    height: 220px;
+  }
+
+  .status-pill {
+    padding: calc(var(--spacing-unit) * 0.4) calc(var(--spacing-unit) * 0.8);
+    font-size: 0.5rem;
   }
 
   .flip-card-back {
-    padding: calc(var(--spacing-unit) * 3);
+    padding: calc(var(--spacing-unit) * 2);
   }
 
   .project-details h3 {
-    font-size: 1.4rem;
+    font-size: 1.2rem;
   }
 
   .project-description {
-    font-size: 0.9rem;
-    max-height: 150px;
+    font-size: 0.85rem;
+    max-height: 120px;
   }
 
   .project-title-overlay h3 {
-    font-size: 1.5rem;
+    font-size: 1.3rem;
   }
 
   .tech-tag {
-    font-size: 0.8rem;
-    padding: calc(var(--spacing-unit) * 0.5) calc(var(--spacing-unit) * 1);
+    font-size: 0.7rem;
+    padding: calc(var(--spacing-unit) * 0.4) calc(var(--spacing-unit) * 0.8);
   }
 
   .project-link {
-    padding: calc(var(--spacing-unit) * 1.25) calc(var(--spacing-unit) * 2.5);
-    font-size: 0.9rem;
+    padding: calc(var(--spacing-unit) * 1) calc(var(--spacing-unit) * 2);
+    font-size: 0.85rem;
   }
 }
 
