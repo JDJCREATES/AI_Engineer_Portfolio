@@ -71,7 +71,7 @@ const FlipCard = ({ title, status, image, images, description, technologies, dem
         }
       };
     }
-  }, [images, currentImageIndex]);
+  }, [images]);
 
   const handleMouseEnter = () => {
     setIsHovering(true);

@@ -34,6 +34,12 @@
 .carousel-header:active,
 .carousel-footer:active {
   background: linear-gradient(135deg, rgba(210, 117, 30, 0.25) 0%, rgba(173, 82, 17, 0.25) 100%);
+  transition: background 0.1s ease;
+}
+
+.carousel-header:not(:active),
+.carousel-footer:not(:active) {
+  transition: background 0.3s ease;
 }
 
 .carousel-header {
@@ -228,11 +234,11 @@
 
 @media (max-width: 480px) {
   .carousel-container {
-    height: 50vh;
+    height: 45vh;
   }
 
   .carousel-section-title {
-    font-size: 1.1rem;
+    font-size: 1rem;
   }
 
   .projects-grid {

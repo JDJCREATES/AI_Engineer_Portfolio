@@ -151,6 +151,30 @@
   }
 }
 
+@media (max-width: 768px) {
+  @keyframes panImage {
+    0% {
+      object-position: 0% center;
+    }
+    100% {
+      object-position: 100% center;
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  @keyframes panImage {
+    0% {
+      object-position: 0% center;
+    }
+    100% {
+      object-position: 100% center;
+    }
+  }
+}
+  }
+}
+
 .project-title-overlay {
   position: absolute;
   bottom: 0;

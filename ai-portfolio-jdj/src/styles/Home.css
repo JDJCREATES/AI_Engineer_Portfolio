@@ -327,12 +327,12 @@
 
 @media (max-width: 768px) {
   .home-container {
-    padding: calc(var(--spacing-unit) * 1.5);
-    gap: calc(var(--spacing-unit) * 1);
+    padding: calc(var(--spacing-unit) * 1);
+    gap: calc(var(--spacing-unit) * 0.75);
   }
 
   .projects-carousel-section {
-    flex: 0 0 55vh;
+    flex: 0 0 48vh;
     padding: 0;
   }
 
