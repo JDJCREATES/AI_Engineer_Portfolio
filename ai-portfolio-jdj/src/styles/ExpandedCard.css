@@ -412,11 +412,15 @@
   font-family: 'Courier New', monospace;
   font-size: 0.95rem;
   line-height: 1.8;
-  overflow-x: auto;
+  overflow-x: hidden;
+  overflow-wrap: break-word;
+  word-break: break-all;
 }
 
 .editor-content pre {
   margin: 0;
+  white-space: pre-wrap;
+  word-wrap: break-word;
 }
 
 .editor-content code {

@@ -2,6 +2,7 @@
     {
         "title": "ObjMark",
         "sectionType": "Personal",
+        "status": "live-google-play",
         "image": "/src/assets/obj-mark/Screenshot 2025-12-14 170312.png",
         "technicalDetails": {
             "problemStatement": "Creating bounding box image datasets on the go was near impossible with existing tools. I needed an offline mobile annotation tool that was quick and straight-forward to use.",
@@ -19,6 +20,7 @@
     {
         "title": "SortxPort",
         "sectionType": "Hackathons",
+        "status": "completed-offline",
         "image": "/src/assets/sortxport/Screenshot 2025-12-14 170355.png",
         "technicalDetails": {
             "problemStatement": "Thousands of family photos mixed wiht memes and screenshots made it nearly impossible to find specific images when needed. Existing solutions lacked natural language search capabilities and required manual sorting.",
@@ -34,17 +36,45 @@
         "demoVideo": ""
     },
     {
-        "title": "Manufacturing Code Date Agent",
-        "sectionType": "Professional",
-        "image": "https://via.placeholder.com/600x400/708090/FFFDD0?text=Project+3",
+        "title": "LineWatch-AI",
+        "sectionType": "Hackathons",
+        "status": "in-development",
+        "image": "/src/assets/linewatch-ai/Screenshot 2026-01-05 104917.png",
+        "images": [
+            "/src/assets/linewatch-ai/Screenshot 2026-01-05 104917.png",
+            "/src/assets/linewatch-ai/Screenshot 2026-01-05 105233.png",
+            "/src/assets/linewatch-ai/Screenshot 2026-01-05 105306.png"
+        ],
         "technicalDetails": {
             "problemStatement": "",
             "issues": [],
             "whatILearned": "",
             "differentNextTime": ""
         },
-        "description": "Demo of a mildly agentic chain for analyzing packaging code dates live. The agent compares historical records, asseses code date, and determines what action to take for the least financial impact.",
-        "technologies": ["Langchain", "Blender", "Open-AI", "Typescript", "Vite", "React"],
+        "description": "Google Gemini 3 DeepMind Hackathon 2026 entry. AI-powered production line monitoring system leveraging computer vision and real-time analytics to detect anomalies and optimize manufacturing workflows.",
+        "technologies": ["Gemini 3", "React", "Typescript", "Computer Vision", "TensorFlow"],
+        "link": "#",
+        "liveLink": "",
+        "githubLink": "",
+        "demoVideo": ""
+    },
+    {
+        "title": "ShipS*",
+        "sectionType": "Hackathons",
+        "status": "in-development",
+        "image": "/src/assets/Ships/Screenshot 2025-12-26 165922.png",
+        "images": [
+            "/src/assets/Ships/Screenshot 2025-12-26 165922.png",
+            "/src/assets/Ships/Screenshot 2026-01-05 104735.png"
+        ],
+        "technicalDetails": {
+            "problemStatement": "",
+            "issues": [],
+            "whatILearned": "",
+            "differentNextTime": ""
+        },
+        "description": "Google Gemini 3 DeepMind Hackathon 2026 entry. Multi-agent orchestrator and sub-agent vibe coding platform with a built-in progressive learning system. Agents learn patterns and common error fixes over time, with opt-in system-wide improvements that benefit the entire platform.",
+        "technologies": ["Gemini 3", "Multi-Agent Systems", "Typescript", "React", "Machine Learning"],
         "link": "#",
         "liveLink": "",
         "githubLink": "",
@@ -53,6 +83,7 @@
     {
         "title": "Chargur",
         "sectionType": "Hackathons",
+        "status": "completed-offline",
         "image": "/src/assets/Chargur/Screenshot 2026-01-05 083557.png",
         "images": [
             "/src/assets/Chargur/Screenshot 2026-01-05 083557.png",
@@ -74,6 +105,7 @@
     {
         "title": "Resume-AI",
         "sectionType": "Personal",
+        "status": "live-web",
         "image": "/src/assets/resum-ai/Screenshot 2025-12-14 170601.png",
         "technicalDetails": {
             "problemStatement": "",

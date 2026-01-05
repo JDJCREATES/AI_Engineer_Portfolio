@@ -12,6 +12,7 @@ interface TechnicalDetails {
 interface Project {
   title: string;
   sectionType?: string;
+  status?: string;
   image: string;
   images?: string[]; // Multiple images for auto-scrolling
   technicalDetails?: TechnicalDetails;
@@ -53,8 +54,18 @@ const ProjectCarousel: React.FC<ProjectCarouselProps> = ({ projects }) => {
     setCurrentSectionIndex((prev) => (prev < sections.length - 1 ? prev + 1 : 0));
   };
 
+  // Handle mouse wheel scrolling
+  const handleWheel = (e: React.WheelEvent) => {
+    e.preventDefault();
+    if (e.deltaY > 0) {
+      handleNext();
+    } else {
+      handlePrevious();
+    }
+  };
+
   return (
-    <div className="carousel-container">
+    <div className="carousel-container" onWheel={handleWheel}>
       <div className="carousel-header" onClick={handlePrevious}>
         <button
           className="carousel-nav-arrow carousel-nav-left"
@@ -96,6 +107,7 @@ const ProjectCarousel: React.FC<ProjectCarouselProps> = ({ projects }) => {
               <FlipCard
                 key={index}
                 title={project.title}
+                status={project.status}
                 image={project.image}
                 images={project.images}
                 description={project.description}

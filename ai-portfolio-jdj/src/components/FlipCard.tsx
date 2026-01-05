@@ -11,6 +11,7 @@ interface TechnicalDetails {
 
 interface FlipCardProps {
   title: string;
+  status?: string;
   image: string;
   images?: string[]; // Multiple images for auto-scrolling
   description: string;
@@ -23,7 +24,7 @@ interface FlipCardProps {
   technicalDetails?: TechnicalDetails;
 }
 
-const FlipCard = ({ title, image, images, description, technologies, link, demoVideo, githubLink, liveLink, position = 'center', technicalDetails }: FlipCardProps) => {
+const FlipCard = ({ title, status, image, images, description, technologies, link, demoVideo, githubLink, liveLink, position = 'center', technicalDetails }: FlipCardProps) => {
   const [isFlipped, setIsFlipped] = useState(false);
   const [isHovering, setIsHovering] = useState(false);
   const [isExpanded, setIsExpanded] = useState(false);
@@ -112,6 +113,11 @@ const FlipCard = ({ title, image, images, description, technologies, link, demoV
       >
           <div className="flip-card-inner">
               <div className="flip-card-front">
+                  {status && (
+                      <div className={`status-pill status-${status}`}>
+                          {status.replace(/-/g, ' ').toUpperCase()}
+                      </div>
+                  )}
                   <img 
                       src={currentImage} 
                       alt={title} 

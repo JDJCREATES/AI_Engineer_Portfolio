@@ -8,6 +8,44 @@
   z-index: 1;
 }
 
+.status-pill {
+  position: absolute;
+  top: calc(var(--spacing-unit) * 2);
+  right: calc(var(--spacing-unit) * 2);
+  padding: calc(var(--spacing-unit) * 1) calc(var(--spacing-unit) * 2);
+  border-radius: 20px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  z-index: 10;
+  backdrop-filter: blur(8px);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.status-pill.status-live-web {
+  background: rgba(39, 201, 63, 0.9);
+  color: #ffffff;
+  border: 1px solid rgba(39, 201, 63, 0.5);
+}
+
+.status-pill.status-live-google-play {
+  background: rgba(52, 168, 83, 0.9);
+  color: #ffffff;
+  border: 1px solid rgba(52, 168, 83, 0.5);
+}
+
+.status-pill.status-completed-offline {
+  background: rgba(173, 82, 17, 0.9);
+  color: var(--primary-color);
+  border: 1px solid rgba(173, 82, 17, 0.5);
+}
+
+.status-pill.status-in-development {
+  background: rgba(255, 189, 46, 0.9);
+  color: #1a1a1a;
+  border: 1px solid rgba(255, 189, 46, 0.5);
+}
+
 @media (max-width: 768px) {
   .flip-card {
     height: 400px;
