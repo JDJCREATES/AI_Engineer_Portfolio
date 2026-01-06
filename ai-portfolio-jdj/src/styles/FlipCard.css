@@ -51,6 +51,20 @@
     height: 280px;
   }
 
+  /* Always show front with title visible on mobile */
+  .flip-card-inner {
+    pointer-events: auto;
+  }
+
+  .project-title-overlay {
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.95), rgba(0, 0, 0, 0.6), transparent);
+    padding: calc(var(--spacing-unit) * 3) calc(var(--spacing-unit) * 1.5) calc(var(--spacing-unit) * 1.5);
+  }
+
+  .project-title-overlay h3 {
+    font-size: 1.3rem;
+  }
+
   .status-pill {
     padding: calc(var(--spacing-unit) * 0.5) calc(var(--spacing-unit) * 1);
     font-size: 0.55rem;
@@ -62,6 +76,14 @@
 @media (max-width: 480px) {
   .flip-card {
     height: 220px;
+  }
+
+  .project-title-overlay {
+    padding: calc(var(--spacing-unit) * 2.5) calc(var(--spacing-unit) * 1) calc(var(--spacing-unit) * 1);
+  }
+
+  .project-title-overlay h3 {
+    font-size: 1.1rem;
   }
 
   .status-pill {
@@ -80,10 +102,6 @@
   .project-description {
     font-size: 0.85rem;
     max-height: 120px;
-  }
-
-  .project-title-overlay h3 {
-    font-size: 1.3rem;
   }
 
   .tech-tag {
@@ -170,8 +188,6 @@
     100% {
       object-position: 100% center;
     }
-  }
-}
   }
 }
 
