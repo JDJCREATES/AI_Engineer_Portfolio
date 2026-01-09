@@ -12,7 +12,7 @@
   overflow-y: auto;
   overflow-x: hidden;
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   justify-content: center;
   padding: calc(var(--spacing-unit) * 2);
 }
