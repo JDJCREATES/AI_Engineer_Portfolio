@@ -24,56 +24,34 @@
 }
 
 .expanded-card {
-  position: relative;
-  margin: auto;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   background: linear-gradient(135deg, var(--background-color) 0%, var(--secondary-color) 100%);
   border-radius: var(--border-radius);
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.8);
   border: 2px solid rgba(255, 253, 208, 0.2);
   overflow: hidden;
   max-width: 95vw;
-  max-height: none;
+  max-height: 90vh;
 }
 
-/* LEFT - Start at left corner, expand right and down */
-.expanded-card.vertical.position-left {
-  width: 0;
-  height: 0;
-  transform: translate(calc(-50% - 600px), -50%);
-  animation: expandLeft 0.4s cubic-bezier(0.4, 0, 0.2, 1) forwards;
-}
-
-.expanded-card.horizontal.position-left {
-  width: 350px;
-  height: 600px;
-  transform: translate(calc(-50% - 600px + 175px), -50%);
-  animation: expandLeftHorizontal 0.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
-}
-
-@keyframes expandLeft {
-  to {
-    width: 350px;
-    height: 600px;
-    transform: translate(calc(-50% - 600px + 175px), -50%);
-  }
-}
-
-@keyframes expandLeftHorizontal {
-  to {
-    width: 1200px;
-    transform: translate(-50%, -50%);
-  }
-}
-
-/* CENTER - Start at center, expand outward */
-.expanded-card.vertical.position-center {
+/* All cards expand from center */
+.expanded-card.vertical,
+.expanded-card.vertical.position-left,
+.expanded-card.vertical.position-center,
+.expanded-card.vertical.position-right {
   width: 0;
   height: 0;
   transform: translate(-50%, -50%);
   animation: expandCenter 0.4s cubic-bezier(0.4, 0, 0.2, 1) forwards;
 }
 
-.expanded-card.horizontal.position-center {
+.expanded-card.horizontal,
+.expanded-card.horizontal.position-left,
+.expanded-card.horizontal.position-center,
+.expanded-card.horizontal.position-right {
   width: 350px;
   height: 600px;
   transform: translate(-50%, -50%);
@@ -92,32 +70,6 @@
     width: 1200px;
   }
 }
-
-/* RIGHT - Start at right corner, expand left and down */
-.expanded-card.vertical.position-right {
-  width: 0;
-  height: 0;
-  transform: translate(calc(-50% + 600px), -50%);
-  animation: expandRight 0.4s cubic-bezier(0.4, 0, 0.2, 1) forwards;
-}
-
-.expanded-card.horizontal.position-right {
-  width: 350px;
-  height: 600px;
-  transform: translate(calc(-50% + 600px - 175px), -50%);
-  animation: expandRightHorizontal 0.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
-}
-
-@keyframes expandRight {
-  to {
-    width: 350px;
-    height: 600px;
-    transform: translate(calc(-50% + 600px - 175px), -50%);
-  }
-}
-
-@keyframes expandRightHorizontal {
-  to {
     width: 1200px;
     transform: translate(-50%, -50%);
   }
